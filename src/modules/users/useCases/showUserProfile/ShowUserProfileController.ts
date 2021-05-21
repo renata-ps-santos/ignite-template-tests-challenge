@@ -7,7 +7,6 @@ import { ShowUserProfileUseCase } from './ShowUserProfileUseCase';
 export class ShowUserProfileController {
   async execute(request: Request, response: Response) {
     const { id } = request.user;
-
     const showUserProfile = container.resolve(ShowUserProfileUseCase);
 
     const user = await showUserProfile.execute(id);
